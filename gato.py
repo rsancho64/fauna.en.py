@@ -4,31 +4,32 @@ from itertools import count
 class gato:
     
     __count = count(0) # ,, self.id
-    __nombr = None
-    __saciado = False
+
+    _nombre = None
+    _saciado = False
     
     def __init__(self, nom = "kitt"):
         self.id = next(self.__count)
-        self.__nombr = nom 
-        print(f"{self.__nombr}: meaow!")
+        self._nombre = nom 
+        print(f"{self._nombre}: meaow!")
 
     def __str__(self) -> str:
         return f"{self.id}: meaow"
 
     def comer(self, comida = "pienso"):
-        self.saciado = True
+        self._saciado = True
 
     def dormir(self):
-        self.saciado = False
+        self._saciado = False
         
     def tocar(self):
-        if self.__saciado: 
+        if self._saciado: 
             print("dejame en paz, esclavo")
         else:
             self.pedirComida()
 
     def pedirComida(self):
-        print(f"{self.__nombr}: dame mi comida, esclavo")
+        print(f"{self._nombre}: dame mi comida, esclavo")
         
 if __name__ == "__main__":
 
